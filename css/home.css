@@ -1,0 +1,27 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+#city_btn{
+    height:90px; 
+    width:90px; 
+    margin:auto;
+}
+
+#uni_btn{
+    height:90px; 
+    width:90px; 
+    margin:auto;
+
+}
+
+#social_btn{
+    height:90px; 
+    width:90px; 
+    margin:auto;
+
+}
