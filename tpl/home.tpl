@@ -12,10 +12,10 @@
             <div class="w3-content w3-row" style="max-width:600px; max-height:750px; height:100%">
                 
                 <div class="w3-col w3-left w3-hide-small w3-hide-medium w3-display-container" style="width:100px; height:90%">
-                    <a class="w3-btn-floating-large w3-display-middle">&#10094;</a>
+                    <a class="w3-btn-floating-large w3-display-middle w3-disabled">&#10094;</a>
                 </div>
                 <div class="w3-col w3-right w3-hide-small w3-hide-medium w3-display-container" style="width:100px; height:90%">
-                    <a class="w3-btn-floating-large w3-display-middle">&#10095;</a>
+                    <a href="/map" class="w3-btn-floating-large w3-display-middle">&#10095;</a>
                 </div>
                 
                 <div class="w3-rest" style="height:100%">
@@ -32,17 +32,17 @@
                         </div>
                         <div class="w3-display-container" style="height:40%">
                             <div class="w3-row w3-display-middle" style="width:100%">
-                                <div class="w3-third">
+                                <div class="w3-col s4">
                                     <div class="w3-circle w3-border w3-container w3-center" id="city_btn">
                                         <p>Città</p>
                                     </div> 
                                 </div>
-                                <div class="w3-third">
+                                <div class="w3-col s4">
                                     <div class="w3-circle w3-border w3-container w3-center" id="uni_btn">
                                         <p>Uni</p>
                                     </div> 
                                 </div>
-                                <div class="w3-third">
+                                <div class="w3-col s4">
                                     <div class="w3-circle w3-border w3-container w3-center" id="social_btn">
                                         <p>Social</p>
                                     </div> 
@@ -53,8 +53,8 @@
                         <div class="w3-container w3-padding-jumbo w3-green" style="height:40%">NEARBY POINT OF INTEREST</div>                    
                     </div>
                     <div class="w3-btn-bar w3-border w3-hide-large" style="height:5%">
-                        <button class="w3-btn w3-border-right" style="width:50%">&#10094;</button>
-                        <button class="w3-btn" style="width:50%">&#10095;</button>
+                        <a class="w3-btn w3-border-right w3-disabled" style="width:50%">&#10094;</a>
+                        <a href="/map" class="w3-btn" style="width:50%">&#10095;</a>
                     </div>
                     
                 </div>

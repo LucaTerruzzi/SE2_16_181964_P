@@ -18,6 +18,8 @@
   "homepage": "https://github.com/LucaTerruzzi/SE2_16_181964_P#readme",
   "dependencies": {
     "bind": "^0.1.7",
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
     "express": "^4.14.0"
   }
 }
