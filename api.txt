@@ -1,0 +1,102 @@
+swagger: '2.0'
+info:
+  title: SW2 project
+  description: api for software engineering 2 project
+  version: "1.0.0"
+# the domain of the service
+# array of all schemes that your API supports
+schemes:
+  - https
+# will be prefixed to all paths
+basePath: /
+produces:
+  - application/json
+  - text/html
+consumes:
+  - application/json
+# the APIs
+paths:
+  /:
+    get:
+      summary: return the home page
+      description: return the home page
+      responses:
+        200:
+          description: return the home page
+  /map:
+    get:
+      summary: return the map page
+      description: return the map page without filters
+      responses:
+        200:
+          description: Return map page
+
+  /mapCity:
+    get:
+      summary: return the city map page
+      description: return the map page filtered with only city POI
+      responses:
+        200:
+          description: Return map page filtered by city
+          
+  /mapUni:
+    get:
+      summary: return the univeristy map page
+      description: return the map page filtered with only university POI
+      responses:
+        200:
+          description: Return map page filtered by university
+          
+  /getPoints:
+    post:
+      summary: Get POI
+      description: It requires a parameter with the poistion and it returns the list of nearby POI without filters
+      parameters:
+        - name: position
+          in: formData
+          description: position
+          required: true
+          type: string
+      responses:
+        200:
+          description: List of POI
+        404:
+          description: no POI found
+        406:
+          description: position not sent
+
+  /getCityPoints:
+    post:
+      summary: Get city POI
+      description: It requires a parameter with the poistion and it returns the list of nearby POI related to city
+      parameters:
+        - name: position
+          in: formData
+          description: position
+          required: true
+          type: string
+      responses:
+        200:
+          description: List of city POI
+        404:
+          description: no POI found
+        406:
+          description: position not sent
+  
+  /getUniPoints:
+    post:
+      summary: Get university POI
+      description: It requires a parameter with the poistion and it returns the list of nearby POI related to university
+      parameters:
+        - name: position
+          in: formData
+          description: position
+          required: true
+          type: string
+      responses:
+        200:
+          description: List of univeristy POI
+        404:
+          description: no POI found
+        406:
+          description: position not sent
