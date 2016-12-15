@@ -32,20 +32,14 @@
                         </div>
                         <div class="w3-display-container" style="height:40%">
                             <div class="w3-row w3-display-middle" style="width:100%">
-                                <div class="w3-col s4">
-                                    <div class="w3-circle w3-border w3-container w3-center" id="city_btn">
-                                        <p>Città</p>
-                                    </div> 
+                                <div class="w3-col s4 w3-center">
+                                    <a href="/mapCity" class="w3-btn w3-circle w3-border w3-white" id="city_btn">Città</a>
                                 </div>
-                                <div class="w3-col s4">
-                                    <div class="w3-circle w3-border w3-container w3-center" id="uni_btn">
-                                        <p>Uni</p>
-                                    </div> 
+                                <div class="w3-col s4 w3-center">
+                                    <a href="/mapUni" class="w3-btn w3-circle w3-border w3-white" id="uni_btn">Uni</a>
                                 </div>
-                                <div class="w3-col s4">
-                                    <div class="w3-circle w3-border w3-container w3-center" id="social_btn">
-                                        <p>Social</p>
-                                    </div> 
+                                <div class="w3-col s4 w3-center">
+                                    <a class="w3-btn w3-disabled w3-circle w3-border w3-white" id="social_btn">Social</a>
                                 </div>
                             </div>
                         

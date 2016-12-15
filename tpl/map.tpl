@@ -21,7 +21,8 @@
                 <div class="w3-rest" style="height:100%">
                     <div class="w3-border" style="height:95%">
                         <div id="map" class="w3-row w3-border-bottom w3-padding-large w3-green" style="height:60%">
-                            MAP OF POINTS OF INTEREST
+                            MAP OF POINTS OF INTEREST<br/>
+                            FILTERD BY: (:filter:)
                         </div>
                         <div class="w3-container w3-padding-large">
                             <ul id="poi_list" class="w3-ul w3-large w3-hoverable">
@@ -41,6 +42,6 @@
             </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="/scripts/map.js"></script>
+        <script src="/scripts/(:mapScript:)"></script>
     </body>
 </html>

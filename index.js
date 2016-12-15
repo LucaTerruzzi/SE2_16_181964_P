@@ -57,7 +57,7 @@ app.get('/map', function(request, response) {
     response.writeHead(200, headers);
  
     //fill template and send as response
-	bind.toFile('tpl/map.tpl', {}, 
+	bind.toFile('tpl/map.tpl', {mapScript:"map.js", filter:"None"}, 
         function(data) 
         {
             //write response
@@ -65,6 +65,39 @@ app.get('/map', function(request, response) {
         });
 });
 
+//Set server for map request filtered by city
+app.get('/mapCity', function(request, response) {
+    //set the headers of the responce
+    var headers = {};
+    //answer
+    headers["Content-Type"] = "text/html";
+    response.writeHead(200, headers);
+ 
+    //fill template and send as response
+	bind.toFile('tpl/map.tpl', {mapScript:"mapCity.js", filter:"City"}, 
+        function(data) 
+        {
+            //write response
+            response.end(data);
+        });
+});
+
+//Set server for map request filtered by uni
+app.get('/mapUni', function(request, response) {
+    //set the headers of the responce
+    var headers = {};
+    //answer
+    headers["Content-Type"] = "text/html";
+    response.writeHead(200, headers);
+ 
+    //fill template and send as response
+	bind.toFile('tpl/map.tpl', {mapScript:"mapUni.js", filter:"University"}, 
+        function(data) 
+        {
+            //write response
+            response.end(data);
+        });
+});
 
 //Respond with a list of point of interest
 app.post('/getPoints', function(request, response) 
@@ -111,6 +144,97 @@ app.post('/getPoints', function(request, response)
 
 });
 
+
+//Respond with a list of point of interest reguarding the city
+app.post('/getCityPoints', function(request, response) 
+{
+	var headers = {};
+	headers["Access-Control-Allow-Origin"] = "*";
+	headers["Access-Control-Allow-Methods"] = "POST, GET, PUT, DELETE, OPTIONS";
+	headers["Access-Control-Allow-Credentials"] = false;
+	headers["Access-Control-Max-Age"] = '86400'; // 24 hours
+	headers["Access-Control-Allow-Headers"] = "X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept";
+	headers["Content-Type"] = "application/json";
+	
+    var position;
+	//check body and parameters
+	if ( typeof request.body !== 'undefined' && request.body){
+		if ( typeof request.body.position !== 'undefined' && request.body.position){
+			 position = request.body.position;
+        }
+		else{
+			position = "not defined";            
+        }
+	}else{
+		position = "body undefined";
+	}
+    
+    
+    if (position !="not defined" && position!="body undefined"){
+        var list = data.getCityPoints(position);
+		//if exists
+		if (list != null){
+			response.writeHead(200, headers);
+			response.end(JSON.stringify(list));
+		}else{
+			response.writeHead(404, headers);
+			response.end(JSON.stringify());
+		}
+
+	}
+    else{
+		//unaceptable input
+		response.writeHead(406, headers);
+		response.end(JSON.stringify("1"));
+	}   
+
+});
+
+
+//Respond with a list of point of interest reguarding the university
+app.post('/getUniPoints', function(request, response) 
+{
+	var headers = {};
+	headers["Access-Control-Allow-Origin"] = "*";
+	headers["Access-Control-Allow-Methods"] = "POST, GET, PUT, DELETE, OPTIONS";
+	headers["Access-Control-Allow-Credentials"] = false;
+	headers["Access-Control-Max-Age"] = '86400'; // 24 hours
+	headers["Access-Control-Allow-Headers"] = "X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept";
+	headers["Content-Type"] = "application/json";
+	
+    var position;
+	//check body and parameters
+	if ( typeof request.body !== 'undefined' && request.body){
+		if ( typeof request.body.position !== 'undefined' && request.body.position){
+			 position = request.body.position;
+        }
+		else{
+			position = "not defined";            
+        }
+	}else{
+		position = "body undefined";
+	}
+    
+    
+    if (position !="not defined" && position!="body undefined"){
+        var list = data.getUniPoints(position);
+		//if exists
+		if (list != null){
+			response.writeHead(200, headers);
+			response.end(JSON.stringify(list));
+		}else{
+			response.writeHead(404, headers);
+			response.end(JSON.stringify());
+		}
+
+	}
+    else{
+		//unaceptable input
+		response.writeHead(406, headers);
+		response.end(JSON.stringify("1"));
+	}   
+
+});
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));

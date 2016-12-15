@@ -18,4 +18,39 @@ function getPoints(position){
     return points;
 }
 
+/**
+ * @brief Return the list of nearby city POI.
+ * @param [in] actual position.
+ * @return List of nearby city POI.
+ */
+function getCityPoints(position){
+    //TO DO-> select only points around current position (certain radius)
+    var res = [];
+    for(var i in points){
+        if(points[i].type == "city"){
+            res.push(points[i]);
+        }
+    }
+    return res;
+}
+
+
+/**
+ * @brief Return the list of nearby university POI.
+ * @param [in] actual position.
+ * @return List of nearby university POI.
+ */
+function getUniPoints(position){
+    //TO DO-> select only points around current position (certain radius)
+    var res = [];
+    for(var i in points){
+        if(points[i].type == "uni"){
+            res.push(points[i]);
+        }
+    }
+    return res;
+}
+
 exports.getPoints = getPoints;
+exports.getCityPoints = getCityPoints;
+exports.getUniPoints = getUniPoints;
