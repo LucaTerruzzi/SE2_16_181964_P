@@ -20,16 +20,16 @@
                 
                 <div class="w3-rest" style="height:100%">
                     <div class="w3-border" style="height:95%">
-                        <div class="w3-row w3-border-bottom w3-padding-large w3-green" style="height:60%">
-                            pippo
+                        <div id="map" class="w3-row w3-border-bottom w3-padding-large w3-green" style="height:60%">
+                            MAP OF POINTS OF INTEREST
                         </div>
-                        <div class="w3-container w3-padding-large" style="height:40%">
-                            <ul class="w3-ul w3-large w3-hoverable">
-                              <li class="w3-padding-large">Jill</li>
-                              <li class="w3-padding-large">Eve</li>
-                              <li class="w3-padding-large">Adam</li>
+                        <div class="w3-container w3-padding-large">
+                            <ul id="poi_list" class="w3-ul w3-large w3-hoverable">
                             </ul>                        
-                        </div>                    
+                        </div>   
+                        <div class="w3-display-container" style="height:10%">
+                            <button id="more_btn" class="w3-btn w3-round-xlarge w3-border w3-white w3-display-middle">&#183;&#183;&#183;</button>
+                        </div>
                     </div>
                     <div class="w3-btn-bar w3-border w3-hide-large" style="height:5%">
                         <a href="/" accesskey=""class="w3-btn w3-border-right" style="width:50%">&#10094;</a>
