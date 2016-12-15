@@ -1,7 +1,7 @@
 $(document).ready(function(){
     var list;
     //get all nearby POI
-    $.post("http://127.0.0.1:1337/getUniPoints",
+    $.post("/getUniPoints",
 		{
 			position: "position"
 		},
